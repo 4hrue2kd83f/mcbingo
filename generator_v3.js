@@ -38,23 +38,23 @@ var generator_v3 = function(layout, difficulty, bingoList)
 
 			// Medium with some Easy
 			case 3:
-				amountOfVeryHard = 0;
-				amountOfHard = 0;
-				amountOfMedium = getRandomInt(15, 19);
-				amountOfEasy = 25 - amountOfMedium;
+				amountOfVeryHard = 1;
+				amountOfHard = 3;
+				amountOfMedium = getRandomInt(12, 16);
+				amountOfEasy = 25 - amountOfMedium - amountOfHard - amountOfVeryHard;
 				break;
 
 			// Hard with some Medium
 			case 4:
-				amountOfVeryHard = 0;
-				amountOfHard = getRandomInt(15, 19);
-				amountOfMedium = 25 - amountOfHard;
-				amountOfEasy = 25 - amountOfHard - amountOfMedium;
+				amountOfVeryHard = 3;
+				amountOfHard = getRandomInt(14, 18);
+				amountOfMedium = 25 - amountOfHard - amountOfVeryHard;
+				amountOfEasy = 25 - amountOfHard - amountOfMedium - amountOfVeryHard;
 				break;
 
 			// Very Hard with some Hard
 			case 5:
-				amountOfVeryHard = getRandomInt(15, 19);
+				amountOfVeryHard = getRandomInt(8, 14);
 				amountOfHard = 25 - amountOfVeryHard;
 				amountOfMedium = 25 - amountOfHard - amountOfVeryHard;
 				amountOfEasy = 25 - amountOfHard - amountOfMedium- amountOfVeryHard;
@@ -169,7 +169,7 @@ var generator_v3 = function(layout, difficulty, bingoList)
 						tagCount[tag.name] = 0;
 					}
 					// Otherwise check if it's higher than it should be
-					else if (tagCount[tag.name] >= tag.max[difficulty - 1])
+					else if (tagCount[tag.name] >= tag.max[difficulty - 1] || tag.name == "Never")
 					{
 						// If we've got too many of that tag, get a new goal
 						console.log(tag.name + " max reached with " + tagCount[tag.name] + " on the board");
