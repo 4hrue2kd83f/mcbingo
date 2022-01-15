@@ -41,6 +41,7 @@ var bingoList_v5 = [
 	{name: "(16-32) Andesite", infrequency: 3, tags: [Item, Overworld]},
 	{name: "(16-32) Granite", infrequency: 3, tags: [Item, Overworld]},
 	{name: "(16-32) Diorite", infrequency: 3, tags: [Item, Overworld]},
+	{name: "Copper Block", antisynergy: ["CopperBlocks"], infrequency: 2, tags: [Item]},
 	{name: "Iron Block", antisynergy: ["IronBlocks"], infrequency: 2, tags: [Item]},
 	{name: "(5-25) Poppies & (5-25) Dandelions", tags: [Item, Overworld]},
 	{name: "Level (5-7)", antisynergy: ["Level"], infrequency: 2, tags: [Stat]},
